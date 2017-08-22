@@ -15,7 +15,7 @@ import (
 // http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html
 
 // DefaultTimeLayout is the default layout used by %d
-var DefaultTimeLayout = "2006-01-02 15:04:05.000000000 -0700 MST"
+var DefaultTimeLayout = "2006-01-02 15:04:05.000"
 
 // LegacyDefaultTimeLayout is the legacy (non-zero padded) time layout.
 // Set layout.DefaultTimeLayout = layout.LegacyDefaultTimeLayout to revert behaviour.
@@ -47,7 +47,7 @@ func Pattern(pattern string) *patternLayout {
 }
 
 func getCaller() *caller {
-	pc, file, line, ok := runtime.Caller(2)
+	pc, file, line, ok := runtime.Caller(6)
 
 	// TODO feels nasty?
 	dir, fn := filepath.Split(file)
