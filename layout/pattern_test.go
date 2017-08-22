@@ -1,7 +1,7 @@
 package layout
 
 import (
-	"github.com/ian-kent/go-log/levels"
+	"github.com/pismo/go-log/levels"
 	"github.com/stretchr/testify/assert"
 	"testing"
 	//"os"
@@ -32,8 +32,8 @@ func TestPattern(t *testing.T) {
 
 	p = Pattern("%F")
 	assert.NotNil(t, p)
-	//assert.Equal(t, p.Format(levels.DEBUG, ""), os.Getenv("GOPATH") + "/src/github.com/ian-kent/go-log/layout/pattern_test.go")
-	//assert.Equal(t, p.Format(levels.DEBUG, "foo"), os.Getenv("GOPATH") + "/src/github.com/ian-kent/go-log/layout/pattern_test.go")
+	//assert.Equal(t, p.Format(levels.DEBUG, ""), os.Getenv("GOPATH") + "/src/github.com/pismo/go-log/layout/pattern_test.go")
+	//assert.Equal(t, p.Format(levels.DEBUG, "foo"), os.Getenv("GOPATH") + "/src/github.com/pismo/go-log/layout/pattern_test.go")
 
 	p = Pattern("%l")
 	assert.NotNil(t, p)

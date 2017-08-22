@@ -3,8 +3,8 @@ package appenders
 // TODO add tests
 
 import (
-	"github.com/ian-kent/go-log/layout"
-	"github.com/ian-kent/go-log/levels"
+	"github.com/pismo/go-log/layout"
+	"github.com/pismo/go-log/levels"
 	"github.com/t-k/fluent-logger-golang/fluent"
 )
 

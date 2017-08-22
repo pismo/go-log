@@ -2,7 +2,7 @@ package appenders
 
 import (
 	"bytes"
-	"github.com/ian-kent/go-log/levels"
+	"github.com/pismo/go-log/levels"
 	"github.com/stretchr/testify/assert"
 	"io"
 	"os"

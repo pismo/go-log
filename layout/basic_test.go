@@ -1,7 +1,7 @@
 package layout
 
 import (
-	"github.com/ian-kent/go-log/levels"
+	"github.com/pismo/go-log/levels"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )

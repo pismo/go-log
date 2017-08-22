@@ -1,0 +1,16 @@
+.idea
+.idea/**
+iso8583.iml
+bin/**
+pkg/**
+application
+iso8583
+ebpkg*
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/**
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# Dependencies
+vendor

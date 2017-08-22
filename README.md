@@ -1,7 +1,7 @@
 Go-Log
 ======
 
-[![Build Status](https://travis-ci.org/ian-kent/go-log.svg?branch=master)](https://travis-ci.org/ian-kent/go-log)
+[![Build Status](https://travis-ci.org/pismo/go-log.svg?branch=master)](https://travis-ci.org/pismo/go-log)
 
 A logger, for Go!
 
@@ -23,14 +23,14 @@ You can disable the fix by setting ExitOnFatal to false, e.g.
 Install go-log:
 
 ```
-go get github.com/ian-kent/go-log/log
+go get github.com/pismo/go-log/log
 ```
 
 Use the logger in your application:
 
 ```
 import(
-  "github.com/ian-kent/go-log/log"
+  "github.com/pismo/go-log/log"
 )
 
 // Pass a log message and arguments directly
