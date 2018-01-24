@@ -13,6 +13,7 @@ import (
 // Logger represents a logger
 type Logger interface {
 	Level() levels.LogLevel
+	Cid() string
 	Name() string
 	FullName() string
 	Enabled() map[levels.LogLevel]bool
@@ -37,6 +38,7 @@ type Logger interface {
 
 type logger struct {
 	level       levels.LogLevel
+	cid         string
 	name        string
 	enabled     map[levels.LogLevel]bool
 	appender    Appender
@@ -172,6 +174,10 @@ func (l *logger) Enabled() map[levels.LogLevel]bool {
 	return l.enabled
 }
 
+func (l *logger) Cid() string {
+	return l.cid
+}
+
 func (l *logger) Name() string {
 	return l.name
 }
@@ -204,6 +210,10 @@ func (l *logger) SetLevel(level levels.LogLevel) {
 			l.enabled[k] = false
 		}
 	}
+}
+
+func (l *logger) SetCid(cid string) {
+	l.cid = cid
 }
 
 func (l *logger) SetAppender(appender Appender) {
