@@ -83,10 +83,10 @@ func NewDefault(name string, appender *Appender) Logger {
 	if appender == nil {
 		appender = appenders.RollingFile(filename, true)
 	}
-	appenderr.MaxBackupIndex = 2
+	appender.MaxBackupIndex = 2
 	appender.SetLayout(layoutPattern)
 
-	layoutPattern = layout.Pattern(fmt.Sprintf("%%d [%s] [%s] [thread] %%p %%c - %%m", api, environment))
+	layoutPattern = layout.Pattern(fmt.Sprintf("%%d [%s] [%s] [%s] [thread] %%p %%c - %%m", l.Cid, api, environment))
 	appender.SetLayout(layoutPattern)
 
 	l.SetAppender(appender)
