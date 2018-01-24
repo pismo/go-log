@@ -69,6 +69,29 @@ func New(name string) Logger {
 	return l
 }
 
+// NewDefault returns a new Logger with sensible defaults
+func NewDefault(name string, appender *Appender) Logger {
+	l := New(name)
+	l.SetLevel(levels.INFO)
+	l.SetLevel(levels.WARN)
+
+	filename := os.Getenv("LOG_FILE")
+	if filename == "" {
+		filename = fmt.Sprintf("/var/log/%s.log", name)
+	}
+
+	if appender == nil {
+		appender = appenders.RollingFile(filename, true)
+	}
+	appenderr.MaxBackupIndex = 2
+	appender.SetLayout(layoutPattern)
+
+	layoutPattern = layout.Pattern(fmt.Sprintf("%%d [%s] [%s] [thread] %%p %%c - %%m", api, environment))
+	appender.SetLayout(layoutPattern)
+
+	l.SetAppender(appender)
+}
+
 func unwrap(args ...interface{}) []interface{} {
 	head := args[0]
 	switch head.(type) {
